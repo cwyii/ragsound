@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Soundboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML5 Soundboard</h1>
+  <button class="button" onclick="playSound('sound1')">Sound 1</button>
+  <button class="button" onclick="playSound('sound2')">Sound 2</button>
+  <button class="button" onclick="playSound('sound3')">Sound 3</button>
 
+  <audio id="sound1" src="sound1.mp3"></audio>
+  <audio id="sound2" src="sound2.mp3"></audio>
+  <audio id="sound3" src="sound3.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
