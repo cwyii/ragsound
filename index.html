@@ -50,7 +50,22 @@
       border: double #031373;
       margin: 20px auto;
     }
-
+/* Specific HR styling with text */
+.styled-hr-with-text {
+  position: relative;
+}
+.styled-hr-with-text::before {
+  content: "SCROLL DOWN FOR RAG SOUNDS"; /* Replace with your desired text */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  background-color: #FF0932; /* Matches the HR background */
+  color: #031373; /* Text color */
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
     .alert {
       padding: 20px;
       background-color: #FF0932;
