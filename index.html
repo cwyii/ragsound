@@ -12,8 +12,8 @@
       margin: 0;
       padding: 20px;
       background-color: #FFFFFF;
-}
     }
+
     .button {
       padding: 15px 20px;
       margin: 10px;
@@ -24,57 +24,65 @@
       color: #FF0932;
       cursor: pointer;
     }
+
     .button:hover {
       background-color: #FF0932;
+      color: #031373; /* Add contrast for hover state */
     }
+
     .image1 {
-            width: 325px;
-            height: auto;
-            margin-top: 0; /* No additional spacing above VULTURES.jpg */
-        }
-          .styled-hr {
-            width: 100%;
-            height: 38px;
-            background-color: #FF0932;
-            border: double #031373;
-            margin: 20px auto;
-        }
-        .alert {
-            padding: 20px;
-            background-color: #FF0932;
-            color: #031373;
-            border: double #031373;
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .closebtn {
-            color: #FFFFFF;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .closebtn:hover {
-            color: #031373;
-        }
+      width: 325px;
+      height: auto;
+      margin-top: 0; /* No additional spacing above VULTURES.jpg */
+    }
+
+    .styled-hr {
+      width: 100%;
+      height: 38px;
+      background-color: #FF0932;
+      border: double #031373;
+      margin: 20px auto;
+    }
+
+    .alert {
+      padding: 20px;
+      background-color: #FF0932;
+      color: #031373;
+      border: double #031373;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .closebtn {
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .closebtn:hover {
+      color: #031373;
+    }
+
     h1 {
-      font-size: 25px; /* Adjust the font size */
-      color: #FF0932; /* Main text color */
+      font-size: 25px;
+      color: #FF0932;
       text-shadow: 
-        -2px -2px 3 #031373, /* Top-left */
-         2px -2px 3 #031373, /* Top-right */
-        -2px  2px 3 #031373, /* Bottom-left */
-         2px  2px 3 #031373, /* Bottom-right */
+        -2px -2px 7px #031373, /* Top-left */
+         2px -2px 7px #031373, /* Top-right */
+        -2px  2px 7px #031373, /* Bottom-left */
+         2px  2px 7px #031373; /* Bottom-right */
     }
   </style>
 </head>
 <body>
   <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <b>NEXT GAME:</b><br><b>NYR @ UTAH</b><br><b>01/16/2025</b><br><b>8:00PM CT</b>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <b>NEXT GAME:</b><br><b>NYR @ UTAH</b><br><b>01/16/2025</b><br><b>8:00PM CT</b>
   </div>
   <hr class="styled-hr">
-    <img src="NYRALTLOGO.png" class="image1" alt="LGR">
+  <img src="NYRALTLOGO.png" class="image1" alt="LGR">
   <hr class="styled-hr">
   <h1>RAGSOUNDS</h1>
   <button class="button" onclick="playSound('sound1')">FRANK SINATRA</button>
@@ -94,7 +102,7 @@
   <audio id="sound6" src="EOPHORN.mp3"></audio>
   <audio id="sound7" src="RANGERSVICTORYSONG.mp3"></audio>
   <audio id="sound8" src="BABAORILEY.mp3"></audio>
- <hr class="styled-hr">
+  <hr class="styled-hr">
   <script src="script.js"></script>
 </body>
 </html>
