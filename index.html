@@ -1,169 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="RAGALT2.jpg">
-    <meta property="og:image:type" content="image/jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="VULTURES">
+    <meta property="og:image" content="KANYETY.jpg">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="1080">
-    <link rel="apple-touch-icon" sizes="180x180" href="RAGALT2.jpg">
-<link rel="apple-touch-icon" sizes="152x152" href="RAGALT2.jpg">
-<link rel="apple-touch-icon" sizes="120x120" href="RAGALT2.jpg">
-<link rel="apple-touch-icon" sizes="76x76" href="RAGALT2.jpg">
-  <title>RAGSOUND</title>
-  <style>
-    body {
-      font-family: -apple-system, Arial, sans-serif;
-      font-size: 25px;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-      background-color: #FFFFFF;
-    }
+    <link rel="apple-touch-icon" sizes="180x180" href="VULTURESWORLD.png">
+<link rel="apple-touch-icon" sizes="152x152" href="VULTURESWORLD.png">
+<link rel="apple-touch-icon" sizes="120x120" href="VULTURESWORLD.png">
+<link rel="apple-touch-icon" sizes="76x76" href="VULTURESWORLD.png">
+    <title>VULTURES</title>
+    <style>
+        /* General body styles */
+        body {
+            background-color: black;
+            color: #faf7f8;
+            font-family: -apple-system, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-    .button {
-      padding: 15px 20px;
-      margin: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      border: 4px double #FF0932;
-      border-radius: 5px;
-      background-color: #031373;
-      color: #FF0932;
-      cursor: pointer;
-    }
+        /* Alert box styling */
+        .alert {
+            padding: 20px;
+            background-color: #080807;
+            color: #e8203e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    .button:hover {
-      background-color: #FF0932;
-      color: #031373; /* Add contrast for hover state */
-    }
+        .closebtn {
+            color: #f2f2f2;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    .image1 {
-      width: 325px;
-      height: auto;
-      margin-top: 0; /* No additional spacing above VULTURES.jpg */
-    }
-    .image2 {
-      width: 100%; /* Adjust the size of the image */
-      height: auto; /* Maintain the aspect ratio */
-      display: block; /* Remove inline spacing */
-      mix-blend-mode: darken; /* Apply the "darken" blend effect */
-      position: relative; /* Ensure it stays in place */
-    }
-    .styled-hr {
-      width: 100%;
-      height: 38px;
-      background-color: #FF0932;
-      border: double #031373;
-      margin: 20px auto;
-    }
-/* HR styling with text */
-.styled-hr-with-text {
-  width: 100%;
-  height: 38px; /* Match the height of your existing HR */
-  background-color: #FF0932;
-  border: double #031373;
-  margin: 20px auto;
-  position: relative;
-}
-.styled-hr-with-text::before {
-  content: "SCROLL DOWN FOR RAGSOUNDS"; /* Replace with your desired text */
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%);
-  background-color: #FF0932; /* Matches the HR background */
-  color: #031373; /* Text color */
-  padding: 0 10px;
-  font-size: 14.5px;
-  font-weight: bold;
-  white-space: nowrap;
-}
-    .alert {
-      padding: 20px;
-      background-color: #FF0932;
-      color: #031373;
-      border: double #031373;
-      font-size: 20px;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-.alert2 {
-      padding: 20px;
-      background-color: #031373;
-      color: #FFFFFF;
-      border: double #FF0932;
-      font-size: 20px;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-    .closebtn {
-      color: #FFFFFF;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+        .closebtn:hover {
+            color: #e8203e;
+        }
 
-    .closebtn:hover {
-      color: #031373;
-    }
+        /* HR styling */
+        .styled-hr {
+            width: 100%;
+            height: 22px;
+            background-color: #080807;
+            border: none;
+            margin: 20px auto;
+        }
 
-    h1 {
-      font-size: 36px;
-      font-weight: bold;
-      letter-spacing: 1.3px;
-      color: #FF0932;
-      h1 {
-      color: white; /* Fill color */
-      -webkit-text-stroke: 2px #031373;  /* Outline */
-}
-    }
-  </style>
+        /* Image styling */
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image1 {
+            width: 397px;
+            height: auto;
+            margin-top: 0; /* No additional spacing above VULTURES.jpg */
+        }
+
+        .image2 {
+            width: 300px;
+            height: auto;
+        }
+
+        .image3 {
+            width: 300px;
+            height: auto;
+        }
+
+        .image4 {
+            width: 200px;
+            height: auto;
+        }
+        
+        .image5 {
+            width: 80px; /* Makes VULTURESWORLD.png half its original size */
+            height: 80px;
+        }
+
+        /* Playlist styling */
+        #playlist {
+            list-style: none;
+            padding: 0;
+        }
+
+        #playlist li {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        #playlist li a {
+            color: #faf7f8;
+            letter-spacing: 1.4px;
+            text-decoration: underline overline;
+            text-decoration-style: double;
+            text-decoration-color: #080807;
+            text-transform: uppercase; /* Forces titles to uppercase */
+            font-weight: bold; /* Makes titles bold */
+            font-size: 23px;
+        }
+
+        #playlist .current-song a {
+            color: #e8203e; /* Highlights the current song in red */
+        }
+    </style>
 </head>
 <body>
-  <div class="alert2">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <b>NYR RECORD:</b><br><b>35-32-7</b><br><b>LAST TEN: 4-5-1</b>
-  </div>
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <b>LAST GAME:</b><br><b>FINAL: 6NYR–SJS1</b>
-  </div>
-  <center><img src="YOUSUCK.png" class="image2" alt="YOU SUCK">
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <b>NEXT GAME:</b><br><b>MIN @ NYR</b><br><b>04/02/2025</b><br><b>7:00PM ET</b>
-  </div>
-  <hr class="styled-hr-with-text">
-  <center><img src="NYRALTLOGO.png" class="image1" alt="LGR">
-  <hr class="styled-hr">
-  <h1>RAGSOUNDS</h1>
-  <button class="button" onclick="playSound('sound1')">FRANK SINATRA</button><br>
-  <button class="button" onclick="playSound('sound2')">LGR</button><br>
-  <button class="button" onclick="playSound('sound3')">POTVIN SUCKS</button><br>
-  <button class="button" onclick="playSound('sound4')">GOAL HORN</button><br>
-  <button class="button" onclick="playSound('sound5')">IT'S A POWERPLAY GOAL</button><br>
-  <button class="button" onclick="playSound('sound6')">END OF PERIOD</button><br>
-  <button class="button" onclick="playSound('sound7')">VICTORY SONG</button><br>
-  <button class="button" onclick="playSound('sound8')">BABA O'RILEY</button><br>
-  <button class="button" onclick="playSound('sound9')">SHOOTS, SCORES!</button><br>
-  <button class="button" onclick="playSound('sound10')">RANGERS WIN</button><br>
-  
-  <audio id="sound1" src="NYNY.mp3"></audio>
-  <audio id="sound2" src="LGRCHANT.mp3"></audio>
-  <audio id="sound3" src="POTVINSUCKS.mp3"></audio>
-  <audio id="sound4" src="NYRGOALHORN.mp3"></audio>
-  <audio id="sound5" src="POWERPLAYGOAL.mp3"></audio>
-  <audio id="sound6" src="EOPHORN.mp3"></audio>
-  <audio id="sound7" src="RANGERSVICTORYSONG.mp3"></audio>
-  <audio id="sound8" src="BABAORILEY.mp3"></audio>
-  <audio id="sound9" src="shoots-scores.mp3"></audio>
-  <audio id="sound10" src="rangerswin.mp3"></audio>
-  </center>
-  <hr class="styled-hr">
-  <script src="script.js"></script>
+    <!-- Alert Box -->
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <b>VULTURES 2</b><br><b><i>OUT NOW</i></b><br><b>BULLY</b><br><b><i>06/15/??</i></b>
+    </div>
+
+    <!-- Images -->
+    <hr class="styled-hr">
+    <img src="VULTURESWORLD.png" class="image5" alt="Vultures World">
+    <img src="VULTURES.jpg" class="image1" alt="Vultures">
+    <hr class="styled-hr">
+    <img src="front-cover.png" class="image2" alt="Front Cover">
+    <hr class="styled-hr">
+
+    <!-- Playlist 1 -->
+    <ul id="playlist">
+        <li><a href="01-stars.mp3">STARS</a></li>
+        <li><a href="02-keys-to-my-life.mp3">KEYS TO MY LIFE</a></li>
+        <li><a href="03-paid.mp3">PAID</a></li>
+        <li><a href="04-talking.mp3">TALKING / ONCE AGAIN</a></li>
+        <li><a href="05-back-to-me.mp3">BACK TO ME</a></li>
+        <li><a href="06-hoodrat.mp3">HOODRAT</a></li>
+        <li><a href="07-do-it.mp3">DO IT</a></li>
+        <li><a href="08-paperwork.mp3">PAPERWORK</a></li>
+        <li><a href="09-burn.mp3">BURN</a></li>
+        <li><a href="10-fuk-sumn.mp3">FUK SUMN</a></li>
+        <li><a href="11-vultures.mp3">VULTURES</a></li>
+        <li><a href="12-carnival.mp3">CARNIVAL</a></li>
+        <li><a href="13-beg-forgiveness.mp3">BEG FORGIVENESS</a></li>
+        <li><a href="14-good-dont-die.mp3">GOOD (DON'T DIE)</a></li>
+        <li><a href="15-problematic.mp3">PROBLEMATIC</a></li>
+        <li><a href="16-king.mp3">KING</a></li>
+    </ul>
+
+    <hr class="styled-hr">
+    <img src="front-cover2.jpeg" class="image3" alt="Front Cover 2">
+    <hr class="styled-hr">
+
+    <!-- Playlist 2 -->
+    <ul id="playlist">
+        <li><a href="01-slide.mp3">SLIDE</a></li>
+        <li><a href="02-time-moving-slow.mp3">TIME MOVING SLOW</a></li>
+        <li><a href="03-field-trip.mp3">FIELD TRIP</a></li>
+        <li><a href="04-fried.mp3">FRIED</a></li>
+        <li><a href="05-isabella.mp3">ISABELLA</a></li>
+        <li><a href="06-promotion.mp3">PROMOTION</a></li>
+        <li><a href="07-husband.mp3">HUSBAND</a></li>
+        <li><a href="08-lifestyle.mp3">LIFESTYLE</a></li>
+        <li><a href="09-forever.mp3">FOREVER</a></li>
+        <li><a href="10-bomb.mp3">BOMB</a></li>
+        <li><a href="11-river.mp3">RIVER</a></li>
+        <li><a href="12-530.mp3">530</a></li>
+        <li><a href="13-dead.mp3">DEAD</a></li>
+        <li><a href="14-forever-rolling.mp3">FOREVER ROLLING</a></li>
+        <li><a href="15-sky-city.mp3">SKY CITY</a></li>
+        <li><a href="16-my-soul.mp3">MY SOUL</a></li>
+        <li><a href="17-take-off-your-dress.mp3">TAKE OFF YOUR DRESS</a></li>
+        <li><a href="18-can-u-be.mp3">CAN U BE</a></li>
+    </ul>
+
+    <hr class="styled-hr">
+    <img src="vultures_shield.jpg" class="image4" alt="Vultures Shield">
+    <hr class="styled-hr">
+
+    <!-- Audio Player -->
+    <audio id="audioPlayer" controls hidden></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const playlistLinks = document.querySelectorAll('#playlist li a');
+            let currentSongIndex = 0;
+
+            const playNextSong = () => {
+                currentSongIndex++;
+                if (currentSongIndex < playlistLinks.length) {
+                    playlistLinks[currentSongIndex].parentElement.classList.add('current-song');
+                    playlistLinks[currentSongIndex - 1].parentElement.classList.remove('current-song');
+                    audioPlayer.src = playlistLinks[currentSongIndex].href;
+                    audioPlayer.play();
+                }
+            };
+
+            playlistLinks.forEach((link, index) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    playlistLinks[currentSongIndex].parentElement.classList.remove('current-song');
+                    currentSongIndex = index;
+                    link.parentElement.classList.add('current-song');
+                    audioPlayer.src = link.href;
+                    audioPlayer.play();
+                });
+            });
+
+            audioPlayer.addEventListener('ended', playNextSong);
+        });
+    </script>
 </body>
 </html>
