@@ -3,44 +3,9 @@ function audioPlayer() {
     var audio = $("#audioPlayer")[0];
     var playlist = $("#playlist li a");
 
-    function updateMediaSession() {
-        if ("mediaSession" in navigator) {
-            var songTitle = $(playlist[currentSong]).text();
-
-            navigator.mediaSession.metadata = new MediaMetadata({
-                title: songTitle,
-                artist: "Your Artist Name"
-            });
-
-            navigator.mediaSession.setActionHandler("nexttrack", function () {
-                playSong(currentSong + 1);
-            });
-
-            navigator.mediaSession.setActionHandler("previoustrack", function () {
-                playSong(currentSong - 1);
-            });
-
-            navigator.mediaSession.setActionHandler("play", function () {
-                audio.play();
-            });
-
-            navigator.mediaSession.setActionHandler("pause", function () {
-                audio.pause();
-            });
-
-            navigator.mediaSession.setActionHandler("seekbackward", null);
-            navigator.mediaSession.setActionHandler("seekforward", null);
-        }
-    }
-
     function playSong(index) {
-        if (index >= playlist.length) {
-            index = 0;
-        }
-
-        if (index < 0) {
-            index = playlist.length - 1;
-        }
+        if (index >= playlist.length) index = 0;
+        if (index < 0) index = playlist.length - 1;
 
         currentSong = index;
 
@@ -50,10 +15,35 @@ function audioPlayer() {
         audio.src = playlist[currentSong].href;
         audio.play();
 
-        updateMediaSession();
+        updateLockScreenInfo();
     }
 
-    playSong(currentSong);
+    function updateLockScreenInfo() {
+        if ("mediaSession" in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: $(playlist[currentSong]).text(),
+                artist: "Your Artist Name"
+            });
+        }
+    }
+
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.setActionHandler("nexttrack", function () {
+            playSong(currentSong + 1);
+        });
+
+        navigator.mediaSession.setActionHandler("previoustrack", function () {
+            playSong(currentSong - 1);
+        });
+
+        navigator.mediaSession.setActionHandler("play", function () {
+            audio.play();
+        });
+
+        navigator.mediaSession.setActionHandler("pause", function () {
+            audio.pause();
+        });
+    }
 
     $("#playlist li a").click(function (e) {
         e.preventDefault();
@@ -63,4 +53,6 @@ function audioPlayer() {
     audio.addEventListener("ended", function () {
         playSong(currentSong + 1);
     });
+
+    playSong(currentSong);
 }
