@@ -178,34 +178,83 @@
     <audio id="audioPlayer" controls hidden></audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const audioPlayer = document.getElementById('audioPlayer');
-            const playlistLinks = document.querySelectorAll('#playlist li a');
-            let currentSongIndex = 0;
+document.addEventListener('DOMContentLoaded', () => {
 
-            const playNextSong = () => {
-                currentSongIndex++;
-                if (currentSongIndex < playlistLinks.length) {
-                    playlistLinks[currentSongIndex].parentElement.classList.add('current-song');
-                    playlistLinks[currentSongIndex - 1].parentElement.classList.remove('current-song');
-                    audioPlayer.src = playlistLinks[currentSongIndex].href;
-                    audioPlayer.play();
-                }
-            };
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playlistLinks = document.querySelectorAll('#playlist li a');
 
-            playlistLinks.forEach((link, index) => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    playlistLinks[currentSongIndex].parentElement.classList.remove('current-song');
-                    currentSongIndex = index;
-                    link.parentElement.classList.add('current-song');
-                    audioPlayer.src = link.href;
-                    audioPlayer.play();
-                });
+    let currentSongIndex = 0;
+
+    function updateMediaSession() {
+
+        if ('mediaSession' in navigator) {
+
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: playlistLinks[currentSongIndex].textContent,
+                artist: 'Your Artist Name'
             });
 
-            audioPlayer.addEventListener('ended', playNextSong);
+            navigator.mediaSession.setActionHandler('nexttrack', () => {
+                playSong(currentSongIndex + 1);
+            });
+
+            navigator.mediaSession.setActionHandler('previoustrack', () => {
+                playSong(currentSongIndex - 1);
+            });
+
+            navigator.mediaSession.setActionHandler('play', () => {
+                audioPlayer.play();
+            });
+
+            navigator.mediaSession.setActionHandler('pause', () => {
+                audioPlayer.pause();
+            });
+
+        }
+    }
+
+    function playSong(index) {
+
+        if (index >= playlistLinks.length) {
+            index = 0;
+        }
+
+        if (index < 0) {
+            index = playlistLinks.length - 1;
+        }
+
+        playlistLinks[currentSongIndex].parentElement.classList.remove('current-song');
+
+        currentSongIndex = index;
+
+        playlistLinks[currentSongIndex].parentElement.classList.add('current-song');
+
+        audioPlayer.src = playlistLinks[currentSongIndex].href;
+
+        audioPlayer.play();
+
+        updateMediaSession();
+    }
+
+    playlistLinks.forEach((link, index) => {
+
+        link.addEventListener('click', (e) => {
+
+            e.preventDefault();
+
+            playSong(index);
+
         });
+
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+        playSong(currentSongIndex + 1);
+    });
+
+    updateMediaSession();
+
+});
     </script>
 </body>
 </html>
